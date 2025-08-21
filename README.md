@@ -1,1 +1,3 @@
-# IT2_pensum_2025
+# IT2 Pensum
+Her legger jeg ut fortløpende det vi jobber med i timene.
+
