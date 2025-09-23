@@ -1,8 +1,9 @@
 import json
 from pprint import pprint
 
+# MERK: Filnavn er i forhold til hvor du står i terminalen! (Hvilken mappe du har åpnet i VS code)
 filnavn = 'DataFiler/sommer_ol.json'
-# For filer med norske tegn
+# Bruker utf-8 for å få inn norske tegn rett. 
 with open(filnavn, 'r', encoding='utf-8') as f:
     data = json.load(f)
 
