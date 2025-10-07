@@ -11,8 +11,13 @@ with open(filnavn, 'r', encoding='utf-8') as f:
 # Legg merke til pprint! (og hvordan importere den)
 pprint(data)
 
+# TODO: Hent ut vinnertidene til året 2020 (rad 2)
+
+# TODO: Hent ut vinnertiden til 100 m for 2020
+
 # TODO: Print årstallene/vinnertidene på egne rader for hver
-# Challenge: Sortere etter årstall:
+
+# TODO: Challenge: Sortere etter årstall:
 #   - lag en ny ordbok der årstaller er key
 #   - lag en liste med alle alle keys (årstallene)
 #   - sorter den lista, og bruk det til å printe det ut pent kronologisk 
