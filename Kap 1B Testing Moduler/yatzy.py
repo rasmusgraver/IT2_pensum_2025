@@ -6,26 +6,31 @@ import yatzy_utils as y
 # Nå er det bare å sy det sammen til et spill :)
 
 
+
+
+
 def skaffYatzy():
     # Prøv å kast 3 ganger, og maksimer for å få 5 like
     # Returnerer True/False om den klarer det eller ikke
     kast = y.nyttKast()
     # print(f"---- Kast 1: {kast}")
-    nr = 2
     for _ in range(2):
         # Prøv 2 ganger å maksimere for fem like:
         mestAv = y.flestForekomster(kast)
         kast = y.nullUt(kast, mestAv)
-        # print(kast)
         kast = y.reKast(kast)
-        # print(f"---- Kast {nr}: {kast}")
-        nr += 1
+        # print(f"---- ReKast: {kast}")
     # Sjekk om vi fikk fem like / Yatzy:
     mestAv = y.flestForekomster(kast)
-    return mestAv == 5 # Fancy måte å returnere True/False på
+    return kast.count(mestAv) == 5 # Kort, enkel måte å returnere True/False på
+
+
+
+
+
 
 ant = 0
-for i in range(100):
+for _ in range(100):
     if skaffYatzy():
         ant += 1
 
