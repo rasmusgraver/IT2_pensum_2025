@@ -22,5 +22,9 @@ else:
 kast = y.reKast([1,0,0,0,1])
 if kast.count(0) > 0:
     print("FEIL! reKast hadde nullere i seg:", kast)
+elif kast[0] != 1:
+    print("FEIL! Den skulle ikke fjernet første eneren")
+elif kast[4] != 1:
+    print("FEIL! Den skulle ikke fjernet andre eneren")
 else:
     print("reKast er good")
