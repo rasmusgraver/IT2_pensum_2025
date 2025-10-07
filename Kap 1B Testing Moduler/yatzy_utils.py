@@ -4,7 +4,7 @@ def nyttKast():
     # Returner liste med 5 random tall
     # f.eks. [1,2,4,5,1]
     kast = []
-    for i in range(5):
+    for _ in range(5):
         kast.append(randint(1,6))
     return kast
 
