@@ -57,6 +57,8 @@ class Ryggsekk():
 
 
 sekk1 = Ryggsekk(20)
+sekk2 = Ryggsekk(100)
+
 
 for g in gjenstander:
     sekk1.leggTilGjenstand(g)
