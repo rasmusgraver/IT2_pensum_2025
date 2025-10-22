@@ -24,3 +24,15 @@ print(dato.strftime("år: %Y, måned: %m"))
 print("Du ble født på en", dato.strftime("%A"))
 
 
+# Dagens dato med now():
+naa = datetime.now()
+
+# Kan ta differansen mellom 2 datoer: 
+diff = naa - dato
+
+# Da får vi et timedelta objekt:
+print("Diff type:", type(diff))
+
+# som har ulike atributter:
+print("Antall dager:", diff.days)
+
