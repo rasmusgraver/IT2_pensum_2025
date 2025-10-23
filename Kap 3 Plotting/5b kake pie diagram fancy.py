@@ -4,28 +4,25 @@ import numpy as np
 partiforkortelser = ["AP", "FrP", "H", "KrF", "MDG", "R", "Sp", "SV", "V", "PF"]
 representanter = [48, 21, 36, 3, 3, 8, 28, 13, 8, 1]
 
-# Farger for hvert segment
-colors = plt.cm.Paired(np.arange(len(partiforkortelser)))
-
-# Lager pie-diagrammet (uten 3D-effekt)
 fig, ax = plt.subplots(figsize=(8, 8), subplot_kw=dict(aspect="equal"))
-wedges, texts, autotexts = ax.pie(
+
+farger = ["#f58c68", "#004281", "#3396d2", "#d2bc2a", "#25a23c", "#5d0008", "#90cc93", "#d34d2f", "#005245", "#f69465"]
+
+# Bruk colormap direkte og vis både prosent og antall i autopct
+total = sum(representanter)
+ax.pie(
     representanter,
     labels=partiforkortelser,
-    colors=colors,
+    colors=farger,
     autopct='%1.1f%%',
     startangle=90,
-    shadow=False  # eksplisitt ingen skygge/3D
+    labeldistance=1.15,
+    wedgeprops = { "linewidth": 1, "edgecolor": "white" }
 )
 
+# Legg til legend hvis du vil ha samleforklaring ved siden av
+ax.legend(partiforkortelser, title="Partier", loc="center left", bbox_to_anchor=(1, 0, 0.3, 1))
 
-# Legger til legende
-ax.legend(wedges, partiforkortelser, title="Partier", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1))
-
-# Tittel
-plt.title("Representasjon av partier i prosent", fontsize=16)
-
-# Justerer layout
+plt.title("Representasjon av partier", fontsize=14)
 plt.tight_layout()
-
 plt.show()
