@@ -1,4 +1,8 @@
 import matplotlib.pyplot as plt
+import numpy as np
+# pip3.14 install matplotlib
+# pip3.14 install numpy 
+# pip3.14 install pygame
 
 xer = []
 yer = []
