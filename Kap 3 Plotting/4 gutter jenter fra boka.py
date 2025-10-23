@@ -19,7 +19,7 @@ antallJenter = [352, 268, 7286, 1028, 709, 851, 243, 826, 200, 895]
 
 fig, ax = plt.subplots(figsize=(10, 5))    # Angir dimensjoner for figure-objektet
 
-y = np.arange(len(antallGutter))
+y = np.arange(len(utdanningsprogram))
 
 ax.barh(y+0.2, antallJenter, height=0.4, label="Jenter")  # Lager stolpediagram jenter
 ax.barh(y-0.2, antallGutter, height=0.4, label="Gutter")  # Lager stolpediagram gutter
