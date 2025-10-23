@@ -35,8 +35,8 @@ plt.plot(xer, yer2, color='green', label='g(x) = x³')
 plt.scatter(xer, yer, color='red', marker='o')
 
 # Setter grenser for aksene
-plt.ylim(-50, 50)
-plt.xlim(-10, 10)
+plt.ylim(-50, 70)
+plt.xlim(-9, 9)
 
 # Legger til forklaringsboks
 plt.legend()
