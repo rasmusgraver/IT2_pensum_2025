@@ -15,10 +15,10 @@ cars_produced_millions = [x / 1_000_000 for x in cars_produced]
 colors = ['blue', 'orange', 'green', 'red', 'purple', 'cyan', 'magenta', 'yellow', 'brown', 'pink']
 
 # Plotter stolpene med zorder for å ligge over grid-linjene
-plt.bar(country, cars_produced_millions, color=colors, zorder=3)  # Bruker fargene
+plt.bar(country, cars_produced_millions, color=colors, zorder=2)  # Bruker fargene
 
 # Legger til horisontale linjer
-plt.grid(axis='y', zorder=0)  # Legger til gridlinjer for y-aksen
+plt.grid(axis='y')  # Legger til gridlinjer for y-aksen
 
 # Vri etikettene 90 grader
 plt.xticks(rotation=90)
