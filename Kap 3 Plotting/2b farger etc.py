@@ -12,7 +12,7 @@ yer = f(xer)
 yer2 = g(xer)
 
 
-# Setter størrelse på plottet
+# Setter størrelse på lerretet
 plt.figure(figsize=(10, 6))
 
 # Legger til rutenett
