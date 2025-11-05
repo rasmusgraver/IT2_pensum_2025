@@ -19,7 +19,7 @@ filnavn = "DataFiler/aksjekurs.csv"
 with open(filnavn, encoding="utf-8-sig") as fil:
     filinnhold = csv.reader(fil, delimiter=";")
 
-    # NB! MERK! Denne er nice!
+    # NOTE! Denne er nice!
     overskrifter = next(filinnhold)
     print(overskrifter)
     print("-"*30)
@@ -42,13 +42,16 @@ for i in range(lengde):
     # lenger bakover enn 0, eller lenger frem en lengden av kurs-listen:
     start = max(0, i-5)
     slutt = min(lengde, i+5)
-    # MERK: Denne syntaxen med [:] er nice! Henter ut en subliste kjapt og enkelt!
+    # NOTE: Denne syntaxen med [:] er nice! Henter ut en subliste kjapt og enkelt!
     snitt = gjennomsnitt_av_liste(kurs_liste[start:slutt])
     snitt_liste.append(snitt)
 
 
 plt.plot(datoer, kurs_liste, label="aksjekurs", color="skyblue")
 plt.plot(datoer, snitt_liste, label="snittkurs 10 dager", color="purple")
+
+# NOTE: Kan bruke dette for manuelt å kontrollere x (og y) aksen
+plt.xticks(datoer[::15], rotation=45, color="orange")
 
 plt.xlabel("Dato")
 plt.ylabel("Kurs")
@@ -59,7 +62,7 @@ plt.legend(loc="upper left")
 
 # Tight layout gjør at vi får plass til å se etikettene på x-aksen (datoene)
 # Trengte det ikke nå lenger... Men: Kjekk kommando å ha i verktøykassa!
-# plt.tight_layout()
+plt.tight_layout()
 
 
 plt.show()
@@ -79,7 +82,7 @@ på denne måten (bare til info til de som er interessert...)
         # Lagrer hver 10ende til å bruke som "xticks":
         i = len(datoer)
         if i%10 == 0:
-            labels.append(rad[0]) # MERK: Her la jeg det bare til som en string!
+            labels.append(rad[0]) # NOTE: Her la jeg det bare til som en string!
             ticks.append(i)
 
 
