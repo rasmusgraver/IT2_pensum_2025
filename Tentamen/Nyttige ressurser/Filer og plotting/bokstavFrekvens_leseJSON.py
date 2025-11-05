@@ -5,7 +5,7 @@ filnavn = "DataFiler/norgeFrekvens.json"
 
 # DISSE LINJENE MÅ DERE KUNNE! (Eller altså "ha i verktøykassa")
 with open(filnavn, encoding="utf-8") as fil:
-  bokstavDict = json.load(fil)
+  bokstavDict:dict = json.load(fil)
 
 pprint(bokstavDict)
 print(f"Antall keys: {len(bokstavDict)}")
@@ -38,9 +38,8 @@ print(top10)
 
 # Konverter til relativ frekvens: Må hente ut total forekomst av alle bokstaver:
 totalForekomst = 0
-for key in bokstavDict:
-  antall = bokstavDict[key]
-  totalForekomst += antall
+for value in bokstavDict.values():
+  totalForekomst += value
 
 print(f"Total bokstav forekomst: {totalForekomst}")
 
@@ -67,11 +66,18 @@ import matplotlib.pyplot as plt
 # plt.xlabel("bokstav")
 # plt.ylabel("Relativ frekvens i %")
 
-# Vi kunne også lagt bar horisontalt:
-plt.barh(list(top10.keys()), list(top10.values()), color="green")
+# Litt større vindu:
+plt.figure(figsize=(10, 6))  # bredde=10, høyde=6 tommer
+
+# Penere å plotte liste i omvendt rekkefølge:
+bokstaver = list(reversed(top10.keys()))
+prosenter = list(reversed(top10.values()))
+
+# Vi bruker bar horisontalt her:
+plt.barh(bokstaver, prosenter, color="green")
 # Legg til verdien på stolpene:
-for i, v in enumerate(top10.values()):
-    plt.text(v-0.5, i-0.1, str(v) + " %", ha='center', va='bottom', color="white", fontsize=6)
+for i, v in enumerate(prosenter):
+    plt.text(v-0.5, i-0.1, str(v) + " %", ha='center', va='bottom', color="white", fontsize=8)
 plt.ylabel("bokstav")
 plt.xlabel("Relativ frekvens i %")
 
