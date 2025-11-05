@@ -29,7 +29,7 @@ with open(filnavn, encoding="utf-8-sig") as fil:
     kurs_liste = []
 
     for rad in filinnhold:
-        # NB!!! HUSK!!! Ikke bare append det som en string! Konverter til rett datatype!
+        # NOTE!! HUSK!! Ikke bare append det som en string! Konverter til rett datatype!
         datoer.append(  datetime.strptime(rad[0], "%Y-%m-%d")  )
         kurs_liste.append(  float(rad[1])  )
 
