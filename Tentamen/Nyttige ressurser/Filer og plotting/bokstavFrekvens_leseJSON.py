@@ -73,13 +73,15 @@ plt.figure(figsize=(10, 6))  # bredde=10, høyde=6 tommer
 bokstaver = list(reversed(top10.keys()))
 prosenter = list(reversed(top10.values()))
 
-# Vi bruker bar horisontalt her:
-plt.barh(bokstaver, prosenter, color="green")
+# Horisontalt søylediagram
+plt.barh(bokstaver, prosenter, color="green", edgecolor="black")
+
 # Legg til verdien på stolpene:
 for i, v in enumerate(prosenter):
-    plt.text(v-0.5, i-0.1, str(v) + " %", ha='center', va='bottom', color="white", fontsize=8)
+            plt.text(v - 0.5, i, f"{v} %", ha='center', va='center', color='white', fontsize=8)
+
 plt.ylabel("bokstav")
 plt.xlabel("Relativ frekvens i %")
-
 plt.title("Frekvensanalyse norske bokstaver")
+# Se om trengs: plt.tight_layout()
 plt.show()
