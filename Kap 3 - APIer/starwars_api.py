@@ -15,4 +15,8 @@ for result in results:
     tittel = result["title"]
     print(tittel, episode, premiere_dato)
     # TODO: Lag et StarWarsFilm-object med disse verdiene!
+    # OG: Lagre disse i en liste av filmer.
+    # Fancy: Hent inn noen av personene også (fra de URLene du får fra APIet i "characters"),
+    # lag objekter av disse også. Kanskje de skal i en ordbok, så du kan slå opp i den og se om personen
+    # allerede har blitt "fetched"?
 
