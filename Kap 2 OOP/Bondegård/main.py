@@ -43,6 +43,8 @@ for ordbok in ting:
 plt.plot(dager, egg, label="egg")
 
 # Ta kontroll over x-aksen:
+# Merk den fancy liste splicing med [start:stop:step] - returnerer en ny liste
+# - i dette tilfellet dagene (fra start til slutt), men bare annenhver av dem
 plt.xticks(dager[::2])
 
 # Skap en alternativ y-akse: (merk: gca betyr "get current axis")
@@ -50,12 +52,21 @@ ax1 = plt.gca()
 ax1.set_ylabel("Egg")
 # Litt fancy syntax for å si at vi vil ha heltall y-ticks:
 ax1.yaxis.set_major_locator(MaxNLocator(integer=True))
+# Trenger vanligivs ikke det her, men bare for å vise at man kan:
+ax1.set_ylim(min(egg) - 1, max(egg) + 1)
 
 # Hent en alternativ axe (tvilling-y-akse)
 ax2 = ax1.twinx()
 ax2.plot(dager, melk, color='orange', label="melk")
-ax2.set_ylabel("Melk (liter)", color='black')
+ax2.set_ylabel("Melk (liter)", color='orange')
+ax2.tick_params(axis='y', labelcolor='orange')
+ax2.spines['right'].set_color('orange')
 ax2.yaxis.set_major_locator(MaxNLocator(integer=True))
+
+# Hent labels fra begge aksene
+lines1, labels1 = ax1.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper right')
 
 plt.show()
 
