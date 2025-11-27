@@ -73,4 +73,6 @@ print(f"Ole: {ole}. Oles mor: {ole.mor} Oles far: {ole.far}")
 print(f"mammas barn: {mamma.barn}")
 print(f"Oles søsken: {ole.søsken()}")
 print(f"mammas barn (2): {mamma.barn}")
-print(f"Baby sin mor sin mor: {baby.mor.mor}")
+print(f"Baby sin mor sin mor: {baby.mor.mor}") 
+# Merk, får en warning av Pylance/inspect her: Fordi den vet ikke 100% at baby har en mor. 
+# Kunne lagt på "safety" her: F.eks. laget metoden "mormor" på person, som sjekker om mor er satt, og så returnerer mor sin mor
