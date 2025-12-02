@@ -4,6 +4,13 @@ class Bok:
         self.forfatter = forfatter
         self.utlånt:Låner|None = None
 
+    def visInfo(self):
+        if self.utlånt:
+            utlåntStr = self.utlånt.lånerID
+        else:
+            utlåntStr = "Ingen"
+        print(f"Bok med tittel {self.tittel} av {self.forfatter}. Utlånt av {utlåntStr}")
+
 
 class Låner:
     def __init__(self, lånerID:int) -> None:
