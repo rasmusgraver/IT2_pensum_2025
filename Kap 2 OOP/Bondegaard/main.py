@@ -1,4 +1,4 @@
-from bondegård import Bondegård
+from bondegaard import Bondegård
 from dyr import *
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
