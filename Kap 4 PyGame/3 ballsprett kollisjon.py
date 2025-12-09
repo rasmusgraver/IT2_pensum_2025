@@ -6,6 +6,8 @@ BLACK = (0,0,0)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
+PURPLE = (200,0,200)
+ORANGE = (255,200,0)
 
 VINDU_BREDDE = 300
 VINDU_HOYDE = 200
@@ -70,7 +72,8 @@ def main():
     baller = [ball1, ball2, ball3]
 
     # Om du vil ha flere baller kan du også legge dem til direkte slik:
-    # baller.append(Ball(x=23,y=34.....))
+    baller.append(Ball(x=200, y=125, radius=10, farge=PURPLE, vx=7, vy=3))
+    baller.append(Ball(x=170, y=175, radius=20, farge=ORANGE, vx=5, vy=4))
 
     running = True
     while running:
