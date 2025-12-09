@@ -16,6 +16,7 @@ clock = pg.time.Clock()
 
 def main():
     running = True
+    x = 10
     while running:
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -24,7 +25,10 @@ def main():
                 running = False
 
         vindu.fill(WHITE)
-        pg.draw.circle(vindu, RED, (100, 250), 50)
+
+        # NOTE: Bruker x variabelen her nå til å flytte på sirkelen:
+        pg.draw.circle(vindu, RED, (x, 250), 50)
+        x+=1
 
         pg.display.flip()
         clock.tick(FPS)
