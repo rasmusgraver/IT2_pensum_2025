@@ -1,0 +1,112 @@
+[
+    {
+        "kjønn": "Jente",
+        "trinn": 10,
+        "tjeneste": "Disney"
+    },
+    {
+        "kjønn": "Gutt",
+        "trinn": 10,
+        "tjeneste": "Netflix"
+    },
+    {
+        "kjønn": "Jente",
+        "trinn": 9,
+        "tjeneste": "HBO"
+    },
+    {
+        "kjønn": "Gutt",
+        "trinn": 8,
+        "tjeneste": "HBO"
+    },
+    {
+        "kjønn": "Jente",
+        "trinn": 10,
+        "tjeneste": "HBO"
+    },
+    {
+        "kjønn": "Gutt",
+        "trinn": 9,
+        "tjeneste": "Disney"
+    },
+    {
+        "kjønn": "Jente",
+        "trinn": 8,
+        "tjeneste": "Netflix"
+    },
+    {
+        "kjønn": "Gutt",
+        "trinn": 10,
+        "tjeneste": "Nrk"
+    },
+    {
+        "kjønn": "Jente",
+        "trinn": 9,
+        "tjeneste": "Disney"
+    },
+    {
+        "kjønn": "Gutt",
+        "trinn": 10,
+        "tjeneste": "HBO"
+    },
+    {
+        "kjønn": "Jente",
+        "trinn": 10,
+        "tjeneste": "HBO"
+    },
+    {
+        "kjønn": "Gutt",
+        "trinn": 9,
+        "tjeneste": "HBO"
+    },
+    {
+        "kjønn": "Jente",
+        "trinn": 8,
+        "tjeneste": "HBO"
+    },
+    {
+        "kjønn": "Gutt",
+        "trinn": 8,
+        "tjeneste": "Disney"
+    },
+    {
+        "kjønn": "Jente",
+        "trinn": 10,
+        "tjeneste": "Disney"
+    },
+    {
+        "kjønn": "Gutt",
+        "trinn": 10,
+        "tjeneste": "Netflix"
+    },
+    {
+        "kjønn": "Jente",
+        "trinn": 9,
+        "tjeneste": "Nrk"
+    },
+    {
+        "kjønn": "Gutt",
+        "trinn": 9,
+        "tjeneste": "HBO"
+    },
+    {
+        "kjønn": "Jente",
+        "trinn": 10,
+        "tjeneste": "HBO"
+    },
+    {
+        "kjønn": "Gutt",
+        "trinn": 9,
+        "tjeneste": "Nrk"
+    },
+    {
+        "kjønn": "Gutt",
+        "trinn": 8,
+        "tjeneste": "Disney"
+    },
+    {
+        "kjønn": "Jente",
+        "trinn": 10,
+        "tjeneste": "Nrk"
+    }
+]
