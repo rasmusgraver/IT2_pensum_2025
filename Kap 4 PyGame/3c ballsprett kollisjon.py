@@ -1,17 +1,6 @@
 from __future__ import annotations
 import pygame as pg
-
-WHITE = (255, 255, 255)
-BLACK = (0,0,0)
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
-BLUE = (0, 0, 255)
-PURPLE = (200,0,200)
-ORANGE = (255,200,0)
-
-VINDU_BREDDE = 300
-VINDU_HOYDE = 200
-FPS = 50
+from constants import *
 
 pg.init()
 vindu = pg.display.set_mode([VINDU_BREDDE, VINDU_HOYDE])
