@@ -1,6 +1,6 @@
 import pygame as pg
 from constants import *
-from MainCharacters.NinjaFrog.ninja import NinjaFrog
+from MainCharacters.NinjaFrog.ninjafrog import NinjaFrog
 
 
 pg.init()
