@@ -12,25 +12,19 @@ clock = pg.time.Clock()
 
 # Finn mappen der Python-filen ligger
 current_dir = os.path.dirname(__file__)
+bildesti = os.path.join(current_dir, "bilder", "eevee.png")
+original = pg.image.load(bildesti).convert_alpha()
+
+# Skaler bildet til ønsket bredde med bevart aspect ratio
+# target_width = 200
+ow, oh = original.get_size()
+# scale_factor = target_width / ow
+scale_factor = 0.15
+new_size = (int(ow * scale_factor), int(oh * scale_factor))
+bilde = pg.transform.smoothscale(original, new_size)  # smoothscale for bedre kvalitet
 
 def main():
     running = True
-
-    # Last inn og forbered bildet ÉN gang før løkka
-    bildesti = os.path.join(current_dir, "bilder", "eevee.png")
-    try:
-        original = pg.image.load(bildesti).convert_alpha()
-    except Exception as e:
-        print(f"Feil ved innlasting av bilde: {e}")
-        return
-
-    # Skaler bildet til ønsket bredde med bevart aspect ratio
-    # target_width = 200
-    ow, oh = original.get_size()
-    # scale_factor = target_width / ow
-    scale_factor = 0.15
-    new_size = (int(ow * scale_factor), int(oh * scale_factor))
-    bilde = pg.transform.smoothscale(original, new_size)  # smoothscale for bedre kvalitet
 
     while running:
         for event in pg.event.get():
