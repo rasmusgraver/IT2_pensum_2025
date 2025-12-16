@@ -11,18 +11,20 @@ class NinjaFrog:
         frame_width = 32
         self.num_frames = full_image.get_width() // frame_width
         
-        # Dele opp bildet i frames
+        # Dele opp bildet i frames, som lagres i en liste:
         self.frames = []
         for i in range(self.num_frames):
             frame = full_image.subsurface(pg.Rect(i * frame_width, 0, frame_width, 32))
             self.frames.append(frame)
         
-        # Animasjonsvariabler
+        # Animasjonsvariabler (som finner rett bilde å vise - i en loop)
         self.current_frame = 0
         self.frame_counter = 0
         
+        # Sjekker om vi facer høyre eller venstre (speilvendt bilde eller ikke)
         self.hoyre = True
-        
+
+        # Typisk i PyGame: Bruker en "rect" for å plassere bildet på rett sted på skjermen (se draw metoden)        
         self.rect = self.frames[0].get_rect()
         self.rect.x = x
         self.rect.y = y
