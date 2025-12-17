@@ -32,7 +32,7 @@ while fortsett:
     # Tegner en ellipse
     pg.draw.ellipse(vindu, (0, 0, 255), (300, 250, 90, 60))
     # Tegner en linje
-    pg.draw.line(vindu, (200, 0, 200), (400, 100), (420, 400), 5)
+    pg.draw.line(vindu, color=(200, 0, 200), start_pos=(400, 100), end_pos=(420, 400), width=5)
 
     # Lager en tekst i form av et bilde og legger til bildet i vinduet
     bilde = font.render("Heisann!", True, (50, 50, 50))

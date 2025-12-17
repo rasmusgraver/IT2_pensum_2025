@@ -1,7 +1,6 @@
 import pygame as pg
 from constants import *
-from MainCharacters.NinjaFrog.ninjafrog import NinjaFrog
-
+from ninjafrog import NinjaFrog
 
 pg.init()
 vindu = pg.display.set_mode([VINDU_BREDDE, VINDU_HOYDE])
@@ -11,7 +10,6 @@ clock = pg.time.Clock()
 
 # our main guy:
 ninja = NinjaFrog(100, 100)
-
 
 def main():
     running = True

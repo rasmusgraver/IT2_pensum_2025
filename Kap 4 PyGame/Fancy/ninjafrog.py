@@ -1,22 +1,29 @@
 import pygame as pg
 import os
+from constants import *
 
 class NinjaFrog:
-    def __init__(self, x, y):
-        current_dir = os.path.dirname(__file__)
-        image_path = os.path.join(current_dir, "Idle (32x32).png")
-        full_image = pg.image.load(image_path)
-        
+    IMAGE_DIR = os.path.join(os.path.dirname(__file__), "MainCharacters", "NinjaFrog")
+
+    def getImageSpriteList(self, image_name):
+        full_image = pg.image.load(os.path.join(self.IMAGE_DIR, image_name))
         # Finn antall frames basert på bildebredde
         frame_width = 32
-        self.num_frames = full_image.get_width() // frame_width
+        num_frames = full_image.get_width() // frame_width
         
         # Dele opp bildet i frames, som lagres i en liste:
-        self.frames = []
-        for i in range(self.num_frames):
+        frames = []
+        for i in range(num_frames):
             frame = full_image.subsurface(pg.Rect(i * frame_width, 0, frame_width, 32))
-            self.frames.append(frame)
-        
+            frames.append(frame)
+        return frames
+
+
+    def __init__(self, x, y):
+        self.idle_frames = self.getImageSpriteList("Idle (32x32).png")
+        # Bildet vi skal vise til å starte med er idle:
+        self.frames = self.idle_frames
+
         # Animasjonsvariabler (som finner rett bilde å vise - i en loop)
         self.current_frame = 0
         self.frame_counter = 0
@@ -41,7 +48,7 @@ class NinjaFrog:
         self.frame_counter += 1
         if self.frame_counter >= 10:
             self.frame_counter = 0
-            self.current_frame = (self.current_frame + 1) % self.num_frames
+            self.current_frame = (self.current_frame + 1) % len(self.frames)
     
     def draw(self, surface):
         """Tegner karakteren på skjermen"""
