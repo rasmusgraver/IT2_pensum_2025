@@ -1,12 +1,12 @@
+from pathlib import Path
 import pygame as pg
-import os
 from constants import *
 
 class NinjaFrog:
-    IMAGE_DIR = os.path.join(os.path.dirname(__file__), "MainCharacters", "NinjaFrog")
+    IMAGE_DIR = Path(__file__).parent / "MainCharacters" / "NinjaFrog"
 
-    def getImageSpriteList(self, image_name:str, frame_width:int) -> list[pg.Surface]:
-        full_image = pg.image.load(os.path.join(self.IMAGE_DIR, image_name))
+    def getImageSpriteList(self, image_name: str, frame_width: int) -> list[pg.Surface]:
+        full_image = pg.image.load(self.IMAGE_DIR / image_name)
         # Finn antall frames basert på bildebredde
         num_frames = full_image.get_width() // frame_width
         
@@ -19,7 +19,7 @@ class NinjaFrog:
         return frames
     
     def getSingleSpriteImage(self, image_name) -> pg.Surface:
-        full_image = pg.image.load(os.path.join(self.IMAGE_DIR, image_name))
+        full_image = pg.image.load(self.IMAGE_DIR / image_name)
         return full_image
 
 
@@ -125,4 +125,4 @@ class NinjaFrog:
         # pg.draw.rect(surface, farge, self.rect)
 
         surface.blit(current_frame_image, self.rect)
-    
+
