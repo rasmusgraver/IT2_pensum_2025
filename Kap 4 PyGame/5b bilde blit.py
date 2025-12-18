@@ -1,6 +1,6 @@
 import pygame as pg
+from pathlib import Path
 from constants import *
-import os
 
 VINDU_BREDDE = 800
 VINDU_HOYDE = 600
@@ -11,8 +11,7 @@ pg.display.set_caption("Eevee Demo")
 clock = pg.time.Clock()
 
 # Finn mappen der Python-filen ligger
-current_dir = os.path.dirname(__file__)
-bildesti = os.path.join(current_dir, "bilder", "eevee.png")
+bildesti = Path(__file__).parent / "bilder" / "eevee.png"
 original = pg.image.load(bildesti).convert_alpha()
 
 # Skaler bildet til ønsket bredde med bevart aspect ratio
