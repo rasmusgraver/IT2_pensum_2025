@@ -15,6 +15,8 @@ def main():
     running = True
 
     while running:
+        # Kjører "den andre måten" å få tastetrykk på for jumping (ellers blir det fort double jump)
+        # => Sjekker etter key down event - da får man bare 1 event, altså bare ett hopp. 
         jumping = False
         for event in pg.event.get():
             if event.type == pg.QUIT:
