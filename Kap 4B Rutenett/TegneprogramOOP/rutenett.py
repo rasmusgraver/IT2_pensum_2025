@@ -9,6 +9,14 @@ class Rute:
         self.kol = kol
         self.farge:tuple = WHITE # random.choice(FARGER)
 
+    def klikk(self):
+        if self.farge == WHITE:
+            self.farge = BLUE
+        elif self.farge == BLUE:
+            self.farge = RED
+        elif self.farge == RED:
+            self.farge = WHITE
+
     def draw(self, vindu):
       # Tegner fyllt firkant med self farge:
       pg.draw.rect(vindu, self.farge, (self.kol * CELLE_STR, self.rad * CELLE_STR, CELLE_STR, CELLE_STR))
@@ -29,6 +37,8 @@ class Rutenett:
     def getWindowSize(self) -> tuple:
         return ( self.ant_kolonner*CELLE_STR, self.ant_rader*CELLE_STR )
 
+    def klikk(self, rad, kolonne):
+        self.brett[rad][kolonne].klikk()
 
     def draw(self, vindu):
         # Kaller på draw metoden til hver Rute:

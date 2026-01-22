@@ -19,6 +19,11 @@ while running:
             running = False
         elif event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE:
             running = False
+        elif event.type == pg.MOUSEBUTTONDOWN:
+            mx, my = event.pos
+            kolonne = mx // CELLE_STR
+            rad = my // CELLE_STR
+            rutenett.klikk(rad, kolonne)
 
     vindu.fill(WHITE)
     rutenett.draw(vindu)
