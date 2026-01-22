@@ -20,14 +20,19 @@ class Rute:
 class Rutenett:
 
 
-    def __init__(self) -> None:
+    def __init__(self, ant_rader, ant_kolonner) -> None:
+        self.ant_rader = ant_rader
+        self.ant_kolonner = ant_kolonner
         # Lager 2D matrise (liste med lister) der hver verdi er et Rute objekt:
-        self.brett: list[list[Rute]] = [[Rute(r,k) for k in range(ANT_KOLONNER)] for r in range(ANT_RADER)]
+        self.brett: list[list[Rute]] = [[Rute(r,k) for k in range(self.ant_kolonner)] for r in range(self.ant_rader)]
+
+    def getWindowSize(self) -> tuple:
+        return ( self.ant_kolonner*CELLE_STR, self.ant_rader*CELLE_STR )
 
 
     def draw(self, vindu):
         # Kaller på draw metoden til hver Rute:
-        for rad in range(ANT_RADER):
-            for kol in range(ANT_KOLONNER):
+        for rad in range(self.ant_rader):
+            for kol in range(self.ant_kolonner):
                 self.brett[rad][kol].draw(vindu)
 

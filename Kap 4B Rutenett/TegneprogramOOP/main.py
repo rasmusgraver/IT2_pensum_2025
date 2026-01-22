@@ -3,13 +3,14 @@ from constants import *
 from rutenett import Rutenett
 import random
 
+# Setter opp rutenettet vårt:
+rutenett = Rutenett(10,20)
+bredde,hoyde = rutenett.getWindowSize()
 
 pg.init()
-vindu = pg.display.set_mode([VINDU_BREDDE, VINDU_HOYDE])
+vindu = pg.display.set_mode( (bredde, hoyde) )
 clock = pg.time.Clock()
 
-# Setter opp rutenettet vårt:
-rutenett = Rutenett()
 
 running = True
 while running:
