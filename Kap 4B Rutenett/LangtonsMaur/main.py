@@ -8,7 +8,7 @@ from maur import Maur
 rutenett = Rutenett(10,20)
 bredde,hoyde = rutenett.getWindowSize()
 
-maur = Maur(rutenett, 2,8)
+maur = Maur(rutenett, 4, 8)
 
 pg.init()
 vindu = pg.display.set_mode( (bredde, hoyde) )
