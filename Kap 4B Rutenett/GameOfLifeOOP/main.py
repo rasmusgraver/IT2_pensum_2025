@@ -26,13 +26,15 @@ while running:
             kolonne = mx // CELLE_STR
             rad = my // CELLE_STR
             rutenett.klikk(rad, kolonne)
+            # Reset framecounter så vi har litt tid å trykke på flere ruter:
+            framecounter = 1
 
     vindu.fill(WHITE)
     rutenett.draw(vindu)
 
     # Hvert sekund:
     if framecounter % FPS == 0:
-        pass
+        rutenett.oppdater()
 
 
 
