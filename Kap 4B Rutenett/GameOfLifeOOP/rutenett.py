@@ -7,19 +7,16 @@ class Rute:
     def __init__(self, rad, kol) -> None:
         self.rad = rad
         self.kol = kol
-        self.farge:tuple = WHITE # random.choice(FARGER)
+        self.levende = False
 
     def klikk(self):
-        if self.farge == WHITE:
-            self.farge = BLUE
-        elif self.farge == BLUE:
-            self.farge = RED
-        elif self.farge == RED:
-            self.farge = WHITE
+        # Bytt fra levende til død, og omvendt:
+        self.levende = not self.levende
 
     def draw(self, vindu):
-      # Tegner fyllt firkant med self farge:
-      pg.draw.rect(vindu, self.farge, (self.kol * CELLE_STR, self.rad * CELLE_STR, CELLE_STR, CELLE_STR))
+      # Tegner fyllt firkant med farge ut i fra levende/død
+      farge = BLACK if self.levende else WHITE
+      pg.draw.rect(vindu, farge, (self.kol * CELLE_STR, self.rad * CELLE_STR, CELLE_STR, CELLE_STR))
       # Tegner en grå boks rundt (bredde 1) (kjekt når fargen er hvit...)
       pg.draw.rect(vindu, GREY, (self.kol * CELLE_STR, self.rad * CELLE_STR, CELLE_STR, CELLE_STR), 1)
 
