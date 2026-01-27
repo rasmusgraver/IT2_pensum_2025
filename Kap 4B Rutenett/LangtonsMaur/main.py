@@ -32,8 +32,8 @@ while running:
     vindu.fill(WHITE)
     rutenett.draw(vindu)
 
-    # Hvert sekund:
-    if framecounter % FPS == 0:
+    # Hvert sekund (eller hvert halve...):
+    if framecounter % (FPS//2) == 0:
         maur.flytt()
 
     maur.draw(vindu)
