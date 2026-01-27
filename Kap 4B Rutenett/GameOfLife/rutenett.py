@@ -23,13 +23,18 @@ class Rute:
 
     def antallLevendeNaboer(self) -> int:
         antallLevende = 0
-        for rute in self.naboer:
-            if rute.levende:
+        for nabo in self.naboer:
+            if nabo.levende:
                 antallLevende += 1
         return antallLevende
     
     def nextStep(self):
         # Finner ut hva "next state" er (nextLevende)
+        # tenker det er tryggest å starte med at nextLevende er False:
+        self.nextLevende = False
+        # (Da kan man egentlig fjerne alle stedende under hvor vi setter nextLevende til False, 
+        # og bare beholde de 2 stedene der vi setter den til True)
+        # Lagre levendeNaboer lokalt så vi ikke kaller på funksjonen på nytt og på nytt:
         levendeNaboer = self.antallLevendeNaboer()
         # Game of Life Rules
         # For a space that is alive:
