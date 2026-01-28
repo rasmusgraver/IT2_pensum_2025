@@ -30,6 +30,19 @@ class Rute:
             if random.random() < (0.3/100):
                 self.nextStatus = TRE
 
+        elif self.status == TRE:
+            # Med 0,03% sjanse set NEXT status til BRANN
+            if random.random() < (0.03/100):
+                self.nextStatus = BRANN
+            # OG: Sjekk alle naboer: Om en av de brenner, så begynner du å brenne
+            for nabo in self.naboer:
+                if nabo.status == BRANN:
+                    self.nextStatus = BRANN
+        
+        elif self.status == BRANN:
+            # Slutt å brenn
+            self.nextStatus = TOM
+
     def nextFrame(self):
         self.status = self.nextStatus
 
