@@ -3,7 +3,7 @@ from constants import *
 from rutenett import Rutenett
 
 # Setter opp rutenettet vårt:
-rutenett = Rutenett(10,20)
+rutenett = Rutenett(30, 40)
 bredde,hoyde = rutenett.getWindowSize()
 
 pg.init()
@@ -24,8 +24,8 @@ while running:
     vindu.fill(WHITE)
     rutenett.draw(vindu)
 
-    # Hvert sekund:
-    if framecounter % FPS == 0:
+    # 5 ganger per sekund:
+    if framecounter % (FPS//5) == 0:
         rutenett.skogbrann()
 
 

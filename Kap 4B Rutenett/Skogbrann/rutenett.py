@@ -25,6 +25,10 @@ class Rute:
         # Finner ut hva "nextStatus" er
         # tenker det er tryggest å starte med at nextStatus er samme som status:
         self.nextStatus = self.status
+        if self.status == TOM:
+            # Med 0,3% sjanse så skal nextStatus bli TRE:
+            if random.random() < (0.3/100):
+                self.nextStatus = TRE
 
     def nextFrame(self):
         self.status = self.nextStatus
