@@ -21,11 +21,12 @@ class Rute:
                         self.naboer.append(brett[self.rad + r][self.kol + k])
 
     
-    def nextStep(self):
+    def nextStep(self, brannPågår):
         # Finner ut hva "nextStatus" er
         # tenker det er tryggest å starte med at nextStatus er samme som status:
         self.nextStatus = self.status
-        if self.status == TOM:
+        # Voks - bare hvis det ikke brenner:
+        if self.status == TOM and brannPågår == False:
             # Med 0,3% sjanse så skal nextStatus bli TRE:
             if random.random() < (0.3/100):
                 self.nextStatus = TRE
@@ -64,6 +65,7 @@ class Rutenett:
     def __init__(self, ant_rader, ant_kolonner) -> None:
         self.ant_rader = ant_rader
         self.ant_kolonner = ant_kolonner
+        self.brannPågår = False
         # Lager 2D matrise (liste med lister) der hver verdi er et Rute objekt:
         self.brett: list[list[Rute]] = [[Rute(r,k) for k in range(self.ant_kolonner)] for r in range(self.ant_rader)]
         # Sett naboene til rutene:
@@ -86,9 +88,12 @@ class Rutenett:
         # Finn ut "nextStatus" til hver rute:
         for rad in range(self.ant_rader):
             for kol in range(self.ant_kolonner):
-                self.brett[rad][kol].nextStep()
+                self.brett[rad][kol].nextStep(self.brannPågår)
 
         # Oppdater status til "nextStatus":
+        self.brannPågår = False
         for rad in range(self.ant_rader):
             for kol in range(self.ant_kolonner):
                 self.brett[rad][kol].nextFrame()
+                if self.brett[rad][kol].status == BRANN:
+                    self.brannPågår = True
