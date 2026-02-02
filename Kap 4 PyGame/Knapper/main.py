@@ -3,18 +3,16 @@ from constants import *
 from spill1 import spill1
 
 pg.init()
-vindu = pg.display.set_mode([VINDU_BREDDE, VINDU_HOYDE])
+vindu = pg.display.set_mode((VINDU_BREDDE, VINDU_HOYDE))
 clock = pg.time.Clock()
+font = pg.font.SysFont(FONT, FONT_SIZE)
 
-font = pg.font.SysFont("Arial", 24)
-KNAPP_HEIGHT = 40
-KNAPP_WIDTH = 100
-PADDING_X = 10
-PADDING_Y = 5
+# Definer knappene våre som "Rect"-objekter:
 knapp1 = pg.Rect(20, 20, KNAPP_WIDTH, KNAPP_HEIGHT)
 knapp2 = pg.Rect(20, 20 + (KNAPP_HEIGHT+20), KNAPP_WIDTH, KNAPP_HEIGHT)
 knapp3 = pg.Rect(20, 20 + (KNAPP_HEIGHT+20)*2, KNAPP_WIDTH, KNAPP_HEIGHT)
 
+# Funksjon for å tegne knappene, med tekst på:
 def tegnKnapp(vindu, knapp:pg.Rect, tekst:str):
     pg.draw.rect(vindu, WHITE, knapp)
     tekstBilde = font.render(tekst, True, BLUE).convert_alpha()
