@@ -8,10 +8,17 @@ clock = pg.time.Clock()
 
 font = pg.font.SysFont("Arial", 24)
 KNAPP_HEIGHT = 40
-KNAPP_WIDTH = 100 
+KNAPP_WIDTH = 100
+PADDING_X = 10
+PADDING_Y = 5
 knapp1 = pg.Rect(20, 20, KNAPP_WIDTH, KNAPP_HEIGHT)
 knapp2 = pg.Rect(20, 20 + (KNAPP_HEIGHT+20), KNAPP_WIDTH, KNAPP_HEIGHT)
 knapp3 = pg.Rect(20, 20 + (KNAPP_HEIGHT+20)*2, KNAPP_WIDTH, KNAPP_HEIGHT)
+
+def tegnKnapp(vindu, knapp:pg.Rect, tekst:str):
+    pg.draw.rect(vindu, WHITE, knapp)
+    tekstBilde = font.render(tekst, True, BLUE).convert_alpha()
+    vindu.blit(tekstBilde, (knapp.x + PADDING_X, knapp.y + PADDING_Y))
 
 
 running = True
@@ -23,7 +30,11 @@ while running:
         elif event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE:
             running = False
         elif event.type == pg.MOUSEBUTTONDOWN:
-            if knapp1.collidepoint(event.pos):
+            # MERK: 2 ulike måter å hente museklikk sin posisjon på under her. 
+            # mouse.get_pos() eller event.pos (Merk: Siste er ikke en funksjon...)
+            # Begge fungerer fint:
+            mx, my = pg.mouse.get_pos()
+            if knapp1.collidepoint( (mx,my) ):
                 print("Spill 1")
                 spill1(vindu, clock)
                 
@@ -33,23 +44,11 @@ while running:
             if knapp3.collidepoint(event.pos):
                 print("Spill 3")
 
-
     vindu.fill(BLACK)
 
-
-
-    pg.draw.rect(vindu, WHITE, knapp1)
-    bilde = font.render("Knapp 1", True, BLUE).convert_alpha()
-    vindu.blit(bilde, (knapp1.x, knapp1.y))
-
-    pg.draw.rect(vindu, YELLOW, knapp2)
-    bilde = font.render("Knapp 2", True, BLUE).convert_alpha()
-    vindu.blit(bilde, (knapp2.x, knapp2.y))
-
-    pg.draw.rect(vindu, WHITE, knapp3)
-    bilde = font.render("Knapp 3", True, BLUE).convert_alpha()
-    vindu.blit(bilde, (knapp3.x, knapp3.y))
-
+    tegnKnapp(vindu, knapp1, "Knapp 1")
+    tegnKnapp(vindu, knapp2, "Knapp 2")
+    tegnKnapp(vindu, knapp3, "Knapp 3")
 
     # Disse har vi alltid til slutt:
     pg.display.flip()
