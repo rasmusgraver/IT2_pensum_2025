@@ -33,31 +33,48 @@ def tegnBrett(vindu, brett):
 
 
 # Returnerer "running" true/false
-def sjekkSeier(brett) -> bool:
-    running = True
+def sjekkSeier(vindu, brett) -> bool:
     for i in range(3):
         # sjekk den ene veien:
         if brett[0][i] != "" and brett[0][i] == brett[1][i] == brett[2][i]:
             print("3 på rad!")
             print(f"{brett[0][i]} vant")
-            running = False
+            return False
     for i in range(3):
         # og den andre veien:
         if brett[i][0] != "" and brett[i][0] == brett[i][1] == brett[i][2]:
             print("3 på rad!")
             print(f"{brett[i][0]} vant")
-            running = False
+            return False
     # og de 2 kryssene:
     if brett[0][0] != "" and brett[0][0] == brett[1][1] == brett[2][2]:
         print("3 på rad!")
         print(f"{brett[1][1]} vant")
-        running = False
+        seier(vindu, brett, brett[1][1])
+        return False
     if brett[2][0] != "" and brett[0][2] == brett[1][1] == brett[2][0]:
         print("3 på rad!")
         print(f"{brett[1][1]} vant")
-        running = False
+        seier(vindu, brett, brett[1][1])
+        return False
 
-    return running
+    return True # Fortsett med running = True (spillet er ikke slutt)
+
+
+# En liten animasjon når vi har vunnet:
+def seier(vindu, brett, brikke):
+    for y in range(3):
+        for x in range(3):
+            for i in range(FPS // 3):
+                if i > FPS // 6:
+                    brett[y][x] = brikke
+                else:
+                    brett[y][x] = ""
+                vindu.fill(WHITE)
+                tegnBrett(vindu, brett)
+                clock.tick(FPS)
+                pg.display.flip()
+
 
 
 playerX = True
@@ -91,7 +108,7 @@ while running:
 
     vindu.fill(WHITE)
     tegnBrett(vindu, brett)
-    running = sjekkSeier(vindu)
+    running = sjekkSeier(vindu, brett)
 
 
     # Disse har vi alltid til slutt:
