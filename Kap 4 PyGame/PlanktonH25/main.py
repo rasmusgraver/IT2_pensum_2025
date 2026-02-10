@@ -37,6 +37,11 @@ def events():
             if plankton_g_sannsynlighet < 0.01:
                 plankton_g_sannsynlighet = 0.01
 
+        # Litt debugg info til terminal (uansett hvilken tast man trykker ned):
+        if event.type == pg.KEYDOWN:
+            print(f"Sannsynlighet for grønn er nå {plankton_g_sannsynlighet}.")
+            print(f"Antallet plankton i lista er {len(planktonliste)}")
+
 
 def random_plankton():
     # Legg til plankton tilfeldig:
