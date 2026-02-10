@@ -1,13 +1,5 @@
 import pygame as pg
-
-WHITE = (255, 255, 255)
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
-BLUE = (0, 0, 255)
-
-VINDU_BREDDE = 500
-VINDU_HOYDE = 500
-FPS = 60
+from constants import *
 
 pg.init()
 vindu = pg.display.set_mode([VINDU_BREDDE, VINDU_HOYDE])
@@ -22,11 +14,20 @@ while running:
         elif event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE:
             running = False
 
+    # Tegn bakgrunn: (En slags "reset" av hele vinduet vårt)
     vindu.fill(WHITE)
+
+    # TODO: Oppdater objektene våre:
+
+
+    # Tegn objektene våre:
     pg.draw.circle(vindu, RED, (100, 250), 50)
 
+
+    # Har alltid disse med til slutt:
     pg.display.flip()
     clock.tick(FPS)
 
-pg.quit()
 
+# While running er slutt: Avslutt pygame på en "ryddig måte":
+pg.quit()
