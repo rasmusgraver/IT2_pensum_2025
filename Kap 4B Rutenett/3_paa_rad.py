@@ -32,33 +32,33 @@ def tegnBrett(vindu, brett):
             pg.draw.rect(vindu, GREY, (x*CELLE_STR, y*CELLE_STR, CELLE_STR, CELLE_STR), width=1)
 
 
-# Returnerer "running" true/false
+# Returnerer "vunnet" true/false
 def sjekkSeier(vindu, brett) -> bool:
     for i in range(3):
         # sjekk den ene veien:
         if brett[0][i] != "" and brett[0][i] == brett[1][i] == brett[2][i]:
             print("3 på rad!")
             print(f"{brett[0][i]} vant")
-            return False
+            return True
     for i in range(3):
         # og den andre veien:
         if brett[i][0] != "" and brett[i][0] == brett[i][1] == brett[i][2]:
             print("3 på rad!")
             print(f"{brett[i][0]} vant")
-            return False
+            return True
     # og de 2 kryssene:
     if brett[0][0] != "" and brett[0][0] == brett[1][1] == brett[2][2]:
         print("3 på rad!")
         print(f"{brett[1][1]} vant")
         seier(vindu, brett, brett[1][1])
-        return False
+        return True
     if brett[2][0] != "" and brett[0][2] == brett[1][1] == brett[2][0]:
         print("3 på rad!")
         print(f"{brett[1][1]} vant")
         seier(vindu, brett, brett[1][1])
-        return False
+        return True
 
-    return True # Fortsett med running = True (spillet er ikke slutt)
+    return False # Ingen vunnet
 
 
 # En liten animasjon når vi har vunnet:
@@ -79,7 +79,8 @@ def seier(vindu, brett, brikke):
 
 playerX = True
 running = True
-while running:
+vunnet = False
+while running and not vunnet:
 
     for event in pg.event.get():
         if event.type == pg.QUIT:
@@ -108,7 +109,7 @@ while running:
 
     vindu.fill(WHITE)
     tegnBrett(vindu, brett)
-    running = sjekkSeier(vindu, brett)
+    vunnet = sjekkSeier(vindu, brett)
 
 
     # Disse har vi alltid til slutt:
