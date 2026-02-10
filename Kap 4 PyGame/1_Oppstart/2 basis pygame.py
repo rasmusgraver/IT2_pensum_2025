@@ -21,7 +21,7 @@ while running:
 
 
     # Tegn objektene våre:
-    pg.draw.circle(vindu, RED, (100, 250), 50)
+    pg.draw.circle(vindu, RED, center=(100, 250), radius=50)
 
 
     # Har alltid disse med til slutt:
