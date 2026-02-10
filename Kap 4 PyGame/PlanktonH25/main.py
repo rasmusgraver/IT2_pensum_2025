@@ -8,6 +8,7 @@ plankton_g_sannsynlighet = 0.03
 
 
 pg.init()
+running = True
 vindu = pg.display.set_mode([VINDU_BREDDE, VINDU_HOYDE])
 clock = pg.time.Clock()
 
@@ -15,8 +16,10 @@ bunndyr = Bunndyr()
 planktonliste:list[Plankton] = []
 
 
-running = True
-while running:
+
+def events():
+    global running
+    global plankton_g_sannsynlighet
     for event in pg.event.get():
         if event.type == pg.QUIT:
             running = False
@@ -33,6 +36,8 @@ while running:
             if plankton_g_sannsynlighet < 0.01:
                 plankton_g_sannsynlighet = 0.01
 
+
+def random_plankton():
     # Legg til plankton tilfeldig:
     if random.random() < plankton_g_sannsynlighet:
         planktonliste.append(Plankton(G))
@@ -40,10 +45,7 @@ while running:
         planktonliste.append(Plankton(R))
 
 
-    # Tegn bakgrunn: (En slags "reset" av hele vinduet vårt)
-    vindu.fill(BLACK)
-
-    # Oppdater objektene våre:
+def oppdater_objekter():
     for p in planktonliste:
         p.oppdater()
         # Sjekk for kollisjon med bunndyret:
@@ -54,16 +56,20 @@ while running:
                 bunndyr.voks()
             else:
                 bunndyr.krymp()
-
-    # Tegn objektene våre:
-    bunndyr.tegn(vindu)
-    for p in planktonliste:
-        p.tegn(vindu)
-
     # Fjern døde plankton:
     for p in planktonliste:
         if p.dod:
             planktonliste.remove(p)
+
+
+def tegn_objekter():
+    bunndyr.tegn(vindu)
+    for p in planktonliste:
+        p.tegn(vindu)
+
+
+def spill_slutt():
+    global running
 
     # Sjekk om spillet er slutt:
     if bunndyr.rect.width < 50:
@@ -73,6 +79,16 @@ while running:
         print("Bunndyret døde av forspisning")
         running = False
 
+
+while running:
+    events()
+    random_plankton()
+
+    # Tegn bakgrunn: (En slags "reset" av hele vinduet vårt)
+    vindu.fill(BLACK)
+    oppdater_objekter()
+    tegn_objekter()
+    spill_slutt()
 
     # Har alltid disse med til slutt:
     pg.display.flip()
