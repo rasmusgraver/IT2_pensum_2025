@@ -33,8 +33,18 @@ class Plankton:
 
     def oppdater(self):
         self.rect.y += 2
-        if self.rect.y > VINDU_HOYDE:
+        if self.rect.top > VINDU_HOYDE:
             self.dod = True
+
+    def bunndyrKollisjon(self, bunndyr:Bunndyr):
+        # Sjekk for kollisjon med bunndyret:
+        if self.rect.colliderect(bunndyr.rect):
+            # Planktonet dør:
+            self.dod = True
+            if self.type == G:
+                bunndyr.voks()
+            else:
+                bunndyr.krymp()
 
     def tegn(self, vindu):
         farge = RED if self.type == R else GREEN

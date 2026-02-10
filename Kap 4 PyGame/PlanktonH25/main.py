@@ -10,7 +10,7 @@ clock = pg.time.Clock()
 
 # Globale variable:
 running = True
-plankton_r_sannsynlighet = 0.01
+plankton_r_sannsynlighet = 0.02
 plankton_g_sannsynlighet = 0.03
 
 # Sett opp objektene våre:
@@ -47,20 +47,13 @@ def random_plankton():
 
 
 def oppdater_objekter():
-    for p in planktonliste:
-        p.oppdater()
-        # Sjekk for kollisjon med bunndyret:
-        if p.rect.colliderect(bunndyr.rect):
-            # Planktonet dør:
-            p.dod = True
-            if p.type == G:
-                bunndyr.voks()
-            else:
-                bunndyr.krymp()
-    # Fjern døde plankton:
-    for p in planktonliste:
+    for p in planktonliste[::]:
         if p.dod:
+            # Fjern døde plankton:
             planktonliste.remove(p)
+        else:
+            p.oppdater()
+            p.bunndyrKollisjon(bunndyr)
 
 
 def tegn_objekter():
