@@ -3,18 +3,19 @@ from constants import *
 from klasser import Bunndyr, Plankton
 import random
 
-plankton_r_sannsynlighet = 0.01
-plankton_g_sannsynlighet = 0.03
-
 
 pg.init()
-running = True
 vindu = pg.display.set_mode([VINDU_BREDDE, VINDU_HOYDE])
 clock = pg.time.Clock()
 
+# Globale variable:
+running = True
+plankton_r_sannsynlighet = 0.01
+plankton_g_sannsynlighet = 0.03
+
+# Sett opp objektene våre:
 bunndyr = Bunndyr()
 planktonliste:list[Plankton] = []
-
 
 
 def events():
