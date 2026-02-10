@@ -65,6 +65,14 @@ while running:
         if p.dod:
             planktonliste.remove(p)
 
+    # Sjekk om spillet er slutt:
+    if bunndyr.rect.width < 50:
+        print("Bunndyret døde av forgiftning")
+        running = False
+    if bunndyr.rect.width > VINDU_BREDDE:
+        print("Bunndyret døde av forspisning")
+        running = False
+
 
     # Har alltid disse med til slutt:
     pg.display.flip()
