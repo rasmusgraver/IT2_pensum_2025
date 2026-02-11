@@ -28,16 +28,12 @@ def setup_brett() -> list[list[Rute]]:
     # Starter med et tomt brett (som vi appender til)
     brett:list[list[Rute]] = []
 
-    for x in range(ANT_X):
-        y_verdier = []
-        for y in range(ANT_Y):
-            rute = Rute(x,y, bokstaver.pop())
-            y_verdier.append(rute)
-        brett.append(y_verdier)
-
-
-    print(brett[0][0]) # "Jeg er rute (0,0)"
-    print(brett[3][2]) # "Jeg er rute (3,2)"
+    for r in range(ANT_RAD):
+        kolonner = []
+        for k in range(ANT_KOL):
+            rute = Rute(k,r, bokstaver.pop())
+            kolonner.append(rute)
+        brett.append(kolonner)
 
     return brett
 
@@ -47,22 +43,16 @@ brett = setup_brett()
 
 running = True
 while running:
-
-    clock.tick(FPS)
     screen.fill(WHITE)
 
     # Sjekk om brukeren avslutter vinduet:
     for event in pg.event.get():
         if event.type == pg.QUIT:
             running = False
-        elif event.type == pg.KEYDOWN:
-            if event.key == pg.K_SPACE:
-                # Tøm brettet:
-                for rad in brett:
-                    for rute in rad:
-                        rute.vis = False
+        elif event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE:
+            running = False
         elif event.type == pg.MOUSEBUTTONDOWN:
-            x_pos, y_pos = pg.mouse.get_pos()
+            x_pos, y_pos = event.pos
 
             for knapp in knapper:
                 if knapp.rektangel.collidepoint( (x_pos, y_pos) ):
@@ -72,10 +62,10 @@ while running:
                     if knapp.tekst == "Restart":
                         brett = setup_brett()
 
-            x = x_pos // (RUTE_STR + GAP)
-            y = y_pos // (RUTE_STR + GAP)
-            if x < ANT_X and y < ANT_Y:
-                rute = brett[x][y]
+            k = x_pos // (RUTE_STR + GAP)
+            r = y_pos // (RUTE_STR + GAP)
+            if k < ANT_KOL and r < ANT_RAD:
+                rute = brett[r][k]
                 print("Du klikket på rute", rute)
                 rute.klikk()
 
@@ -91,10 +81,11 @@ while running:
 
 
 
-
     # Oppdater displayet og klikk framover på klokka:
     pg.display.flip()
     clock.tick(FPS)
+
+
 
 
 # While running er slutt: Avslutt pygame:

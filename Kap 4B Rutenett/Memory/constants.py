@@ -18,14 +18,14 @@ FPS = 60
 RUTE_STR = 60
 GAP = 10
 
-ANT_X = 4
-ANT_Y = 4
+ANT_KOL = 4
+ANT_RAD = 4
 
 # Definerer størrelsen på pygame-vinduet:
-GAME_WIDTH = ANT_X * (RUTE_STR + GAP)
+GAME_WIDTH = ANT_KOL * (RUTE_STR + GAP)
 
 WIDTH = GAME_WIDTH + 200 # Setter av plass til knappene
-HEIGHT = ANT_Y * (RUTE_STR + GAP)
+HEIGHT = ANT_RAD * (RUTE_STR + GAP)
 
 # Definerer menyfeltet til høyre i vinduet
 MENY_XSTART = GAME_WIDTH + 50
