@@ -3,6 +3,7 @@ from constants import *
 from rute import Rute
 from pg_meny import Knapp, MENYFARGE
 import random
+import time
 
 # Start opp PyGame:
 pg.init()
@@ -38,10 +39,14 @@ def setup_brett() -> list[list[Rute]]:
     return brett
 
 
-brett = setup_brett()
-
-
+brett:list[list[Rute]] = setup_brett()
 running = True
+# Antall ruter som er klikket på:
+antall_aapne = 0
+# De to rutene som er blitt klikket på:
+rute1 = None
+rute2 = None
+
 while running:
     screen.fill(WHITE)
 
@@ -61,14 +66,23 @@ while running:
                         running = False
                     if knapp.tekst == "Restart":
                         brett = setup_brett()
+                        antall_aapne = 0
+                        rute1 = None
+                        rute2 = None
 
             k = x_pos // (RUTE_STR + GAP)
             r = y_pos // (RUTE_STR + GAP)
             if k < ANT_KOL and r < ANT_RAD:
                 rute = brett[r][k]
                 print("Du klikket på rute", rute)
-                rute.klikk()
-
+                if antall_aapne < 2 and rute.vis == False:
+                    rute.klikk()
+                    # Lagrer ruten vi klikket på i rute1 og rute2:
+                    if antall_aapne == 0:
+                        rute1 = rute
+                    else:
+                        rute2 = rute
+                    antall_aapne += 1
 
     # Tegn brettet for hver "frame":
     for rad in brett:
@@ -80,10 +94,33 @@ while running:
         knapp.tegn(screen)
 
 
-
     # Oppdater displayet og klikk framover på klokka:
     pg.display.flip()
     clock.tick(FPS)
+
+
+
+
+    # Må ha sjekken helt til slutt (Etter at vi har tegnet brettet):
+    if rute1 and rute2:
+        print("------------ Sjekker de to rutene")
+        # Sjekk om de to er like:
+        if rute1.bokstav == rute2.bokstav:
+            print("De to er like")
+            rute1.funnet = True
+            rute2.funnet = True
+        else:
+            print("NEI!")
+
+        # Vent 1 sec:
+        time.sleep(1)
+        # Lukk rutene igjen:
+        rute1.vis = False
+        rute2.vis = False
+        antall_aapne = 0
+        rute1 = None
+        rute2 = None
+
 
 
 

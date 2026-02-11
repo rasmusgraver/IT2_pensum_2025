@@ -8,12 +8,14 @@ class Rute:
         self.y = y
         self.bokstav = bokstav
         self.vis = False
+        self.funnet = False
 
     def __repr__(self):
         return f"Rute {self.x}, {self.y} med bokstav {self.bokstav}"
 
     def klikk(self):
-        self.vis = not self.vis
+        # Vis ruten:
+        self.vis = True
 
     def tegn(self, screen):
         x_pos = self.x * (RUTE_STR + GAP)
@@ -22,6 +24,9 @@ class Rute:
         if self.vis:
             # Tegn bokstaven
             skriv_tekst(screen, x_pos + 16, y_pos + 8, self.bokstav, BLACK)
+        elif self.funnet:
+            # Tegn bokstaven med grønn bakgrunnsfarge:
+            skriv_tekst(screen, x_pos + 16, y_pos + 8, self.bokstav, BLACK, GREEN)
         else:
             # Tegn en firkant
             pg.draw.rect(screen, GREEN, (x_pos, y_pos, RUTE_STR, RUTE_STR))
