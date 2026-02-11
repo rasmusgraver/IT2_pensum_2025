@@ -17,19 +17,19 @@ class Rute:
         # Vis ruten:
         self.vis = True
 
-    def tegn(self, screen):
+    def tegn(self, vindu):
         x_pos = self.kol * (RUTE_STR + GAP)
         y_pos = self.rad * (RUTE_STR + GAP)
 
         if self.vis:
             # Tegn bokstaven
-            skriv_tekst(screen, x_pos + 16, y_pos + 8, self.bokstav, BLACK)
+            skriv_tekst(vindu, x_pos + 16, y_pos + 8, self.bokstav, BLACK)
         elif self.funnet:
             # Tegn bokstaven med grønn bakgrunnsfarge:
-            skriv_tekst(screen, x_pos + 16, y_pos + 8, self.bokstav, BLACK, GREEN)
+            skriv_tekst(vindu, x_pos + 16, y_pos + 8, self.bokstav, BLACK, GREEN)
         else:
             # Tegn en firkant
-            pg.draw.rect(screen, GREEN, (x_pos, y_pos, RUTE_STR, RUTE_STR))
+            pg.draw.rect(vindu, GREEN, (x_pos, y_pos, RUTE_STR, RUTE_STR))
 
         # Tegn en ramme rundt:
-        pg.draw.rect(screen, BLACK, (x_pos, y_pos, RUTE_STR, RUTE_STR), width=1)
+        pg.draw.rect(vindu, BLACK, (x_pos, y_pos, RUTE_STR, RUTE_STR), width=1)
