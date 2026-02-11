@@ -3,23 +3,23 @@ from constants import *
 from tekst import skriv_tekst
 
 class Rute:
-    def __init__(self, x, y, bokstav):
-        self.x = x
-        self.y = y
+    def __init__(self, k, r, bokstav):
+        self.kol = k
+        self.rad = r
         self.bokstav = bokstav
         self.vis = False
         self.funnet = False
 
     def __repr__(self):
-        return f"Rute {self.x}, {self.y} med bokstav {self.bokstav}"
+        return f"Rute {self.rad}, {self.kol} med bokstav {self.bokstav}"
 
     def klikk(self):
         # Vis ruten:
         self.vis = True
 
     def tegn(self, screen):
-        x_pos = self.x * (RUTE_STR + GAP)
-        y_pos = self.y * (RUTE_STR + GAP)
+        x_pos = self.kol * (RUTE_STR + GAP)
+        y_pos = self.rad * (RUTE_STR + GAP)
 
         if self.vis:
             # Tegn bokstaven
