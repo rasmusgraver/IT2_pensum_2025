@@ -53,7 +53,8 @@ class Simulering:
                 p.bunndyrKollisjon(self.bunndyr)
 
 
-    def tegn_objekter(self, vindu):
+    def tegn(self, vindu):
+        vindu.fill(BLACK)
         self.bunndyr.tegn(vindu)
         for p in self.planktonliste:
             p.tegn(vindu)
