@@ -21,7 +21,7 @@ class Rute:
       # Tegner fyllt firkant med self farge:
       pg.draw.rect(vindu, self.farge, (self.kol * CELLE_STR, self.rad * CELLE_STR, CELLE_STR, CELLE_STR))
       # Tegner en grå boks rundt (bredde 1) (kjekt når fargen er hvit...)
-      pg.draw.rect(vindu, GREY, (self.kol * CELLE_STR, self.rad * CELLE_STR, CELLE_STR, CELLE_STR), 1)
+      pg.draw.rect(vindu, GREY, (self.kol * CELLE_STR, self.rad * CELLE_STR, CELLE_STR, CELLE_STR), width=1)
 
 
 

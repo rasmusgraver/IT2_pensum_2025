@@ -1,14 +1,10 @@
 import pygame as pg
 from constants import *
 from rutenett import Rutenett
-from maur import Maur
-
 
 # Setter opp rutenettet vårt:
 rutenett = Rutenett(10,20)
 bredde,hoyde = rutenett.getWindowSize()
-
-maur = Maur(rutenett, 4, 8)
 
 pg.init()
 vindu = pg.display.set_mode( (bredde, hoyde) )
@@ -28,15 +24,15 @@ while running:
             kolonne = mx // CELLE_STR
             rad = my // CELLE_STR
             rutenett.klikk(rad, kolonne)
+            # Nullstill frameCounter:
+            framecounter = 1
 
     vindu.fill(WHITE)
     rutenett.draw(vindu)
 
-    # Hvert sekund (eller hvert halve...):
-    if framecounter % (FPS//2) == 0:
-        maur.flytt()
-
-    maur.draw(vindu)
+    # Hvert sekund:
+    if framecounter % FPS == 0:
+        rutenett.gameOfLife()
 
 
     # Oppdater displayet og klikk framover på klokka:

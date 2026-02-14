@@ -1,0 +1,35 @@
+import pygame as pg
+from constants import *
+from tekst import skriv_tekst
+
+class Rute:
+    def __init__(self, k, r, bokstav):
+        self.kol = k
+        self.rad = r
+        self.bokstav = bokstav
+        self.vis = False
+        self.funnet = False
+
+    def __repr__(self):
+        return f"Rute {self.rad}, {self.kol} med bokstav {self.bokstav}"
+
+    def klikk(self):
+        # Vis ruten:
+        self.vis = True
+
+    def tegn(self, vindu):
+        x_pos = self.kol * (RUTE_STR + GAP)
+        y_pos = self.rad * (RUTE_STR + GAP)
+
+        if self.vis:
+            # Tegn bokstaven
+            skriv_tekst(vindu, x_pos + 16, y_pos + 8, self.bokstav, BLACK)
+        elif self.funnet:
+            # Tegn bokstaven med grønn bakgrunnsfarge:
+            skriv_tekst(vindu, x_pos + 16, y_pos + 8, self.bokstav, BLACK, GREEN)
+        else:
+            # Tegn en firkant
+            pg.draw.rect(vindu, GREEN, (x_pos, y_pos, RUTE_STR, RUTE_STR))
+
+        # Tegn en ramme rundt:
+        pg.draw.rect(vindu, BLACK, (x_pos, y_pos, RUTE_STR, RUTE_STR), width=1)

@@ -19,7 +19,9 @@ class Maur:
     def draw(self, vindu):
         x = self.kolonne * CELLE_STR
         y = self.rad * CELLE_STR
-        vindu.blit(self.bilde, (x,y) )
+        # Roter bilde til å peke rett vei
+        bilde = pg.transform.rotate(self.bilde, -(90*self.retningsIndex))
+        vindu.blit(bilde, (x,y) )
 
     def flytt(self):
         if self.rutenett.brett[self.rad][self.kolonne].farge == WHITE:

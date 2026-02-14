@@ -1,14 +1,10 @@
 import pygame as pg
 from constants import *
 from rutenett import Rutenett
-from maur import Maur
-
 
 # Setter opp rutenettet vårt:
-rutenett = Rutenett(10,20)
+rutenett = Rutenett(30, 40)
 bredde,hoyde = rutenett.getWindowSize()
-
-maur = Maur(rutenett, 4, 8)
 
 pg.init()
 vindu = pg.display.set_mode( (bredde, hoyde) )
@@ -23,20 +19,14 @@ while running:
             running = False
         elif event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE:
             running = False
-        elif event.type == pg.MOUSEBUTTONDOWN:
-            mx, my = event.pos
-            kolonne = mx // CELLE_STR
-            rad = my // CELLE_STR
-            rutenett.klikk(rad, kolonne)
+
 
     vindu.fill(WHITE)
     rutenett.draw(vindu)
 
-    # Hvert sekund (eller hvert halve...):
-    if framecounter % (FPS//2) == 0:
-        maur.flytt()
-
-    maur.draw(vindu)
+    # 5 ganger per sekund:
+    if framecounter % (FPS//5) == 0:
+        rutenett.skogbrann()
 
 
     # Oppdater displayet og klikk framover på klokka:
