@@ -1,16 +1,22 @@
 from __future__ import annotations
 import pygame as pg
 from constants import *
+from dataclasses import dataclass
 
-
+# Dataclass med slots=True gjør at vi må spesifisere helt i starten av
+# klassen alle attributter denne klassen har (for å unngå skrivefeil og andre bugs...)
+@dataclass(slots=True)
 class Rute:
-    def __init__(self, rad:int, kol:int) -> None:
+    rad: int
+    kol: int
+    # Trenger to statuser for å få animasjonen til å fungere:
+    # Hva er status i "denne framen", og i "neste frame"
+    levende: bool = False
+    nextLevende: bool = False
+
+    def __init__(self, rad: int, kol: int) -> None:
         self.rad = rad
         self.kol = kol
-        # Trenger to statuser for å få animasjonen til å fungere:
-        # Hva er status i "denne framen", og i "neste frame"
-        self.levende = False
-        self.nextLevende = False
     
     def nextStep(self, brett:list[list[Rute]], ant_kol:int) -> None:
         # Finner ut hva "next state" er (nextLevende)
