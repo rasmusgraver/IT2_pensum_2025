@@ -5,6 +5,7 @@ from dataclasses import dataclass
 
 # Dataclass med slots=True gjør at vi må spesifisere helt i starten av
 # klassen alle attributter denne klassen har (for å unngå skrivefeil og andre bugs...)
+# OG det gjør at man ikke selv lager init metoden (om du ikke har spesielle ting som trengs der)
 @dataclass(slots=True)
 class Rute:
     rad: int
@@ -14,9 +15,11 @@ class Rute:
     levende: bool = False
     nextLevende: bool = False
 
-    def __init__(self, rad: int, kol: int) -> None:
-        self.rad = rad
-        self.kol = kol
+    # MERK! Trenger IKKE å lage init funksjonen selv nå! 
+    # Den lages automatisk med dataclass-tingen!
+    # def __init__(self, rad: int, kol: int) -> None:
+    #    self.rad = rad
+    #    self.kol = kol
     
     def nextStep(self, brett:list[list[Rute]], ant_kol:int) -> None:
         # Finner ut hva "next state" er (nextLevende)
