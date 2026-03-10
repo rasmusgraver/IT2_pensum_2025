@@ -24,5 +24,9 @@ for i in range(100):
 # Kjapp/Fancy måte å lage en liste med verdiene 1,2,3,4,5,6:
 kastVerdier = list(range(1,7))
 
+# Nå har vi 2 lister, begge med 6 verdier:
+print(kastVerdier)
+print(results)
+# De kan ta plottes som x og y/høyde:
 plt.bar(kastVerdier, results)
 plt.show()
