@@ -31,6 +31,12 @@ for i in range(100):
     kast = random.randint(1,6)
     resultater[kast] += 1
 
-# MERK: Se så pent man kan bar-plotte ordbøker!
-plt.bar(resultater.keys(), resultater.values())
+# plotter keys og values:
+kategorier = list(resultater.keys())
+verdier = list(resultater.values())
+plt.bar(kategorier, verdier)
+
+# Denne fungerer også, men får en warning fra PyLance om feil datatype:
+#plt.bar(resultater.keys(), resultater.values())
+
 plt.show()
