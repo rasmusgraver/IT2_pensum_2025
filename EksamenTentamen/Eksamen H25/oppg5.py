@@ -18,7 +18,10 @@ class Tallviser:
         self.verdi += 1
 
     def vis_verdi(self) -> str:
-        return str(self.verdi)
+        if self.verdi < 10:
+            return "0" + str(self.verdi)
+        else:
+            return str(self.verdi)
 
 
 class DigitalKlokke:
