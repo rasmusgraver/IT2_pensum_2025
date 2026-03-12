@@ -1,11 +1,13 @@
-import json
+from pathlib import Path
 from pprint import pprint
+import json
 
-filnavn = "DataFiler/norgeFrekvens.json"
+CURRENT_DIR = Path(__file__).parent
+jsonFilNavn = CURRENT_DIR / "norgeFrekvens.json"
 
 # DISSE LINJENE MÅ DERE KUNNE! (Eller altså "ha i verktøykassa")
-with open(filnavn, encoding="utf-8") as fil:
-  bokstavDict:dict = json.load(fil)
+with open(jsonFilNavn, encoding="utf-8") as fil:
+  bokstavDict = json.load(fil)
 
 pprint(bokstavDict)
 print(f"Antall keys: {len(bokstavDict)}")
@@ -23,11 +25,7 @@ sortertDict = dict(sorted(bokstavDict.items(), key=lambda item: item[1], reverse
 # NB!!: MERK!!! pprint sorterer dict på keys av seg selv! Så her må vi bruke "vanlig print"!!
 # print(sortertDict)
 
-# Kan bruke mer fancy google stuff:
-# from itertools import islice
-# top10 = dict(islice(sortertDict.items(), 10))
-
-# ELLER: Konverter til en liste og så ta de 10 første:
+# Konverter til en liste og ta de 10 første:
 bokstavListe = list(sortertDict.items())
 top10 = dict(bokstavListe[:10])
 

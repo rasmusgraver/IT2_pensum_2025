@@ -1,12 +1,15 @@
+from pathlib import Path
 from pprint import pprint
 import json
 
-txtFil = "DataFiler/norge.txt"
+CURRENT_DIR = Path(__file__).parent
+txtFilNavn = CURRENT_DIR / "norge.txt"
+jsonFilNavn = CURRENT_DIR / "norgeFrekvens.json"
 
 # Starter med en tom dictionary:
 bokstavDict = {}
 
-with open(txtFil, encoding="utf-8") as fil:
+with open(txtFilNavn, encoding="utf-8") as fil:
   innhold = fil.read()
   for bokstav in innhold:
     # Sjekker at det er en bokstav (isalpha) (og ikke et tegn eller mellomrom eller tall)
@@ -24,7 +27,6 @@ pprint(bokstavDict)
 print(f"Antall keys: {len(bokstavDict)}")
 
 # Lagre resultatet til en json fil:
-jsonFilNavn = "DataFiler/norgeFrekvens.json"
 json_object = json.dumps(bokstavDict, indent=4)
 with open(jsonFilNavn, "w") as outfile:
     outfile.write(json_object)
