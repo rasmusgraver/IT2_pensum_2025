@@ -1,0 +1,1 @@
+# Lag din kode for oppgave 1 "Gjett Tallet" her

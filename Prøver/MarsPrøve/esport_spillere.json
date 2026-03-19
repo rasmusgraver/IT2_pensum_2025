@@ -1,0 +1,122 @@
+[
+  {
+    "spillerId": 1,
+    "navn": "ThunderStrike",
+    "alder": 19,
+    "land": "Norge",
+    "poeng": 2450,
+    "kamperSpilt": 87,
+    "seiere": 52,
+    "rangering": "Diamant"
+  },
+  {
+    "spillerId": 2,
+    "navn": "ShadowNinja",
+    "alder": 22,
+    "land": "Sverige",
+    "poeng": 3120,
+    "kamperSpilt": 124,
+    "seiere": 89,
+    "rangering": "Master"
+  },
+  {
+    "spillerId": 3,
+    "navn": "IceQueen",
+    "alder": 18,
+    "land": "Norge",
+    "poeng": 1890,
+    "kamperSpilt": 65,
+    "seiere": 34,
+    "rangering": "Platina"
+  },
+  {
+    "spillerId": 4,
+    "navn": "DragonSlayer",
+    "alder": 25,
+    "land": "Danmark",
+    "poeng": 3850,
+    "kamperSpilt": 156,
+    "seiere": 112,
+    "rangering": "Grandmaster"
+  },
+  {
+    "spillerId": 5,
+    "navn": "PhoenixRise",
+    "alder": 20,
+    "land": "Norge",
+    "poeng": 2780,
+    "kamperSpilt": 98,
+    "seiere": 61,
+    "rangering": "Diamant"
+  },
+  {
+    "spillerId": 6,
+    "navn": "StormBreaker",
+    "alder": 21,
+    "land": "Finland",
+    "poeng": 2950,
+    "kamperSpilt": 103,
+    "seiere": 68,
+    "rangering": "Master"
+  },
+  {
+    "spillerId": 7,
+    "navn": "NightWolf",
+    "alder": 23,
+    "land": "Sverige",
+    "poeng": 3340,
+    "kamperSpilt": 142,
+    "seiere": 95,
+    "rangering": "Master"
+  },
+  {
+    "spillerId": 8,
+    "navn": "BlazeFury",
+    "alder": 19,
+    "land": "Danmark",
+    "poeng": 2120,
+    "kamperSpilt": 79,
+    "seiere": 43,
+    "rangering": "Platina"
+  },
+  {
+    "spillerId": 9,
+    "navn": "FrostBite",
+    "alder": 24,
+    "land": "Norge",
+    "poeng": 3650,
+    "kamperSpilt": 148,
+    "seiere": 105,
+    "rangering": "Grandmaster"
+  },
+  {
+    "spillerId": 10,
+    "navn": "CrimsonBlade",
+    "alder": 20,
+    "land": "Sverige",
+    "poeng": 2580,
+    "kamperSpilt": 91,
+    "seiere": 55,
+    "rangering": "Diamant"
+  },
+  {
+    "spillerId": 11,
+    "navn": "SilverArrow",
+    "alder": 18,
+    "land": "Finland",
+    "poeng": 1650,
+    "kamperSpilt": 58,
+    "seiere": 28,
+    "rangering": "Gull"
+  },
+  {
+    "spillerId": 12,
+    "navn": "VoidWalker",
+    "alder": 26,
+    "land": "Danmark",
+    "poeng": 3980,
+    "kamperSpilt": 167,
+    "seiere": 118,
+    "rangering": "Grandmaster"
+  }
+]
