@@ -19,6 +19,10 @@ import numpy as np
 CURRENT_DIR = Path(__file__).parent
 filnavn = CURRENT_DIR / "studenter_i_hoyere_utdanning.csv"
 
+# Vanlige formater:
+#   windows-1252
+#   utf-8-sig
+#   iso-8859-1
 with open(filnavn, encoding="utf-8-sig") as fil:
     filinnhold = csv.reader(fil, delimiter=";")
     overskrifter = next(filinnhold)
