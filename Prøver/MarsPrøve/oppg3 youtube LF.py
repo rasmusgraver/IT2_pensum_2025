@@ -57,8 +57,24 @@ sortertList = sorted(land_dict.items(), key=lambda item: item[1], reverse=True)
 # Bare 5 første:
 fem_storste = sortertList[0:5]
 #print(fem_storste)
+# Tabell-lignende oppsett:
 for k, v in fem_storste:
     print(f"{k:20} med {v} YouTubere")
+
+
+# Sektor-diagram av de 5 landene:
+# Har en liste av tupler - kan gjøre om til en dict igjen:
+fem_dict = dict(fem_storste)
+# Og kan da hente ut vha keys og values:
+land_navn = list(fem_dict.keys())
+antall = list(fem_dict.values())
+
+# Lag sektor-diagram
+plt.figure(figsize=(8, 6))
+plt.pie(antall, labels=land_navn, autopct='%1.1f%%', startangle=90)
+plt.title('De 5 landene med flest YouTubere')
+plt.tight_layout()
+plt.show()
 
 
 
