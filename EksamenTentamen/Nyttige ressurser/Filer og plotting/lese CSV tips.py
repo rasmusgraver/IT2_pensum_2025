@@ -32,6 +32,18 @@ with open(filnavn, encoding="utf-8-sig") as fil:
     # Lagrer radene i en liste:
     rader = list(filinnhold)
 
+
+# Kast ut den siste raden:
+# rader.pop()
+
+
 print("Jeg har nå", len(rader), "rader å jobbe med")
 print("Antall kolonner i første rad:", len(rader[0]))
 print("Første entries i første rad:", rader[0][0], "|" , rader[0][1], "|" , rader[0][2])
+
+
+# Når du skal gå gjennom radene:
+for rad in rader:
+    print("Her er en rad", rad)
+    print("og den første verdien i raden:", rad[0])
+
