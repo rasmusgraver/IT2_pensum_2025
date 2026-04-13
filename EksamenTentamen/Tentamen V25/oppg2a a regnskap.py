@@ -1,8 +1,12 @@
+from pathlib import Path
 import csv
 import matplotlib.pyplot as plt
 from pprint import pprint
 
-filnavn = "DataFiler/utgifter.csv"
+# La oss bruke denne måten nå, så funker det uansett hvor man står og kjører programmet:
+CURRENT_DIR = Path(__file__).parent
+filnavn = CURRENT_DIR / "utgifter.csv"
+
 
 # Summerer opp for mat og strøm hver for seg:
 mat = 0

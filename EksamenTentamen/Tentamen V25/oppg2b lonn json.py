@@ -1,6 +1,8 @@
+from pathlib import Path
 import json
 
-filnavn = "DataFiler/manedslonn.json"
+CURRENT_DIR = Path(__file__).parent
+filnavn = CURRENT_DIR / "manedslonn.json"
 
 with open(filnavn, encoding="utf-8") as f:
   data = json.load(f)
@@ -10,6 +12,7 @@ print(data)
 
 # Bygger opp en liste med dataene vi trenger: (2024)
 lonn_2024 = []
+kvinnelonn = 0
 
 for yrke in data.keys():
   for kjonn in data[yrke].keys():

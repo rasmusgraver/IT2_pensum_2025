@@ -1,8 +1,11 @@
+from pathlib import Path
 import csv
 import matplotlib.pyplot as plt
 from pprint import pprint
 
-filnavn = "DataFiler/manedslonn.csv"
+# La oss bruke denne måten nå, så funker det uansett hvor man står og kjører programmet:
+CURRENT_DIR = Path(__file__).parent
+filnavn = CURRENT_DIR / "manedslonn.csv"
 
 with open(filnavn, encoding="utf-8-sig") as fil:
     filinnhold = csv.reader(fil, delimiter=";")
@@ -16,6 +19,8 @@ with open(filnavn, encoding="utf-8-sig") as fil:
 
     # Bygger opp en liste med dataene vi trenger: (2024)
     lonn_2024 = []
+    yrke = ""
+    kvinnelonn = 0
     for rad in filinnhold:
         kjonn = rad[1]
         if kjonn == "Kvinner":
