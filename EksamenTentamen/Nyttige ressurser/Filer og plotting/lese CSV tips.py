@@ -42,10 +42,18 @@ with open(filnavn, encoding="utf-8-sig") as fil:
 print("Jeg har nå", len(rader), "rader å jobbe med")
 print("Antall kolonner i første rad:", len(rader[0]))
 print("Første entries i første rad:", rader[0][0], "|" , rader[0][1], "|" , rader[0][2])
-
+ANT_KOL = len(overskrifter)
+if len(rader[0]) != ANT_KOL:
+    print("WARNING! Det er ulikt antall kolonner i overskrifter og første rad")
 
 # Når du skal gå gjennom radene:
 for rad in rader:
-    print("Her er en rad", rad)
-    print("og den første verdien i raden:", rad[0])
+    # Første verdi i raden:
+    kol1 = rad[0]
+    # siste verdi i raden:
+    sisteVerdi = rad[ANT_KOL-1]
+    sisteOverskrift = overskrifter[ANT_KOL-1]
+    # print(f"Første verdi: {kol1}. Siste: {sisteOverskrift}: {sisteVerdi}")
+    # print("Her er en rad", rad)
+    # print("og den første verdien i raden:", rad[0])
 
