@@ -1,8 +1,6 @@
-# Jeg lærte følgende triks når jeg jobbet med oppgave 3d:
-#
-#    # SE LENGER NED HER I PRAKSIS hvordan gjøre det:
-#    # Lagrer radene i en liste:
-#    rader = list(filinnhold)
+# MERK DERE DENNE!
+#   Lagrer radene i en liste:
+#   rader = list(filinnhold)
 #
 # Dette gjør at man kan gå igjennom radene flere ganger - noe man
 # sliter med på "den andre måten"
@@ -13,9 +11,11 @@
 from pathlib import Path
 import csv
 from pprint import pprint
+# pprint er "handy" om man skal printe ut mye data, f eks en stor ordbok
 import matplotlib.pyplot as plt
 import numpy as np
 
+# La oss bruke denne måten nå, så funker det uansett hvor man står og kjører programmet:
 CURRENT_DIR = Path(__file__).parent
 filnavn = CURRENT_DIR / "studenter_i_hoyere_utdanning.csv"
 
@@ -28,6 +28,8 @@ with open(filnavn, encoding="utf-8-sig") as fil:
     overskrifter = next(filinnhold)
     print(overskrifter)
     print("Antall overskrifter:", len(overskrifter))
+    # hopp over en ekstra rad før vi henter ut resten av innholdet:
+    # next(filinnhold)
 
     # Lagrer radene i en liste:
     rader = list(filinnhold)
