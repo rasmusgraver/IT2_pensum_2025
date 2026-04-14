@@ -38,7 +38,7 @@ while fortsett:
     bilde = font.render("Heisann!", True, (50, 50, 50))
     vindu.blit(bilde, (400, 20))
 
-    # Oppdaterer alt innholdet i vinduet
+    # Oppdaterer alt innholdet i vinduet (flip eller update - same same)
     pg.display.flip()
 
 # Avslutter pygame
