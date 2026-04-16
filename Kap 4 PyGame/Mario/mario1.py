@@ -19,21 +19,24 @@ class Mario:
     bildesti = Path(__file__).parent / "bilder" / "mario_s.png"
 
     def __init__(self, x, y) -> None:
-        self.image = pg.image.load(self.bildesti).convert_alpha()
+        self.imageRight = pg.image.load(self.bildesti).convert_alpha()
+        self.imageLeft = pg.transform.flip(self.imageRight, True, False)
+        self.image = self.imageRight
         self.rect = self.image.get_rect()
         # self.rect:pg.Rect = pg.Rect(x, y, 40, 60)
         self.rect.x = x
         # Flytt Mario opp, så han kommer på bakken:
         self.rect.bottom = y
         self.vy = 0
-        # TODO: Trolig lurt å ha en self.jumping true/false
         self.jumping = False
 
     def oppdater(self, keys):
         if keys[pg.K_LEFT]:
             self.rect.x -= 5
+            self.image = self.imageLeft
         if keys[pg.K_RIGHT]:
             self.rect.x += 5
+            self.image = self.imageRight
         if keys[pg.K_UP]:
             # Bare dersom du ikke allerede hopper
             if self.jumping == False:
@@ -102,7 +105,4 @@ while running:
 
 
 
-
-
 pg.quit()
-
