@@ -31,7 +31,9 @@ while running:
             # MERK: 2 ulike måter å hente museklikk sin posisjon på under her. 
             # mouse.get_pos() eller event.pos (Merk: Siste er ikke en funksjon...)
             # Begge fungerer fint:
-            mx, my = pg.mouse.get_pos()
+            # mx, my = pg.mouse.get_pos()
+            # Men når det er her inne i en event, så mest naturlig å bruke den:
+            mx, my = event.pos
             if knapp1.collidepoint( (mx,my) ):
                 print("Spill 1")
                 spill1(vindu, clock)
