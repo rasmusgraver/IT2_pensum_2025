@@ -1,0 +1,302 @@
+[
+    {
+        "tittel": "The Shawshank Redemption",
+        "regissør": "Frank Darabont",
+        "spilletid": 142,
+        "budsjett": 25000000
+    },
+    {
+        "tittel": "The Dark Knight",
+        "regissør": "Christopher Nolan",
+        "spilletid": 152,
+        "budsjett": 185000000
+    },
+    {
+        "tittel": "Schindler's List",
+        "regissør": "Steven Spielberg",
+        "spilletid": 195,
+        "budsjett": 22000000
+    },
+    {
+        "tittel": "Pulp Fiction",
+        "regissør": "Quentin Tarantino",
+        "spilletid": 154,
+        "budsjett": 8000000
+    },
+    {
+        "tittel": "The Godfather",
+        "regissør": "Francis Ford Coppola",
+        "spilletid": 175,
+        "budsjett": 6000000
+    },
+    {
+        "tittel": "Inception",
+        "regissør": "Christopher Nolan",
+        "spilletid": 148,
+        "budsjett": 160000000
+    },
+    {
+        "tittel": "Interstellar",
+        "regissør": "Christopher Nolan",
+        "spilletid": 169,
+        "budsjett": 165000000
+    },
+    {
+        "tittel": "Parasite",
+        "regissør": "Bong Joon-ho",
+        "spilletid": 132,
+        "budsjett": 11000000
+    },
+    {
+        "tittel": "The Matrix",
+        "regissør": "Lana Wachowski",
+        "spilletid": 136,
+        "budsjett": 63000000
+    },
+    {
+        "tittel": "Forrest Gump",
+        "regissør": "Robert Zemeckis",
+        "spilletid": 142,
+        "budsjett": 55000000
+    },
+    {
+        "tittel": "Gladiator",
+        "regissør": "Ridley Scott",
+        "spilletid": 155,
+        "budsjett": 103000000
+    },
+    {
+        "tittel": "The Silence of the Lambs",
+        "regissør": "Jonathan Demme",
+        "spilletid": 118,
+        "budsjett": 19000000
+    },
+    {
+        "tittel": "Fight Club",
+        "regissør": "David Fincher",
+        "spilletid": 139,
+        "budsjett": 63000000
+    },
+    {
+        "tittel": "Goodfellas",
+        "regissør": "Martin Scorsese",
+        "spilletid": 146,
+        "budsjett": 25000000
+    },
+    {
+        "tittel": "La La Land",
+        "regissør": "Damien Chazelle",
+        "spilletid": 128,
+        "budsjett": 30000000
+    },
+    {
+        "tittel": "Whiplash",
+        "regissør": "Damien Chazelle",
+        "spilletid": 107,
+        "budsjett": 3300000
+    },
+    {
+        "tittel": "Get Out",
+        "regissør": "Jordan Peele",
+        "spilletid": 104,
+        "budsjett": 4500000
+    },
+    {
+        "tittel": "Oppenheimer",
+        "regissør": "Christopher Nolan",
+        "spilletid": 180,
+        "budsjett": 100000000
+    },
+    {
+        "tittel": "Avengers: Endgame",
+        "regissør": "Anthony og Joe Russo",
+        "spilletid": 181,
+        "budsjett": 356000000
+    },
+    {
+        "tittel": "Mad Max: Fury Road",
+        "regissør": "George Miller",
+        "spilletid": 120,
+        "budsjett": 185000000
+    },
+    {
+        "tittel": "The Grand Budapest Hotel",
+        "regissør": "Wes Anderson",
+        "spilletid": 99,
+        "budsjett": 25000000
+    },
+    {
+        "tittel": "Knives Out",
+        "regissør": "Rian Johnson",
+        "spilletid": 130,
+        "budsjett": 40000000
+    },
+    {
+        "tittel": "Everything Everywhere All at Once",
+        "regissør": "Daniel Kwan og Daniel Scheinert",
+        "spilletid": 139,
+        "budsjett": 14300000
+    },
+    {
+        "tittel": "The Truman Show",
+        "regissør": "Peter Weir",
+        "spilletid": 103,
+        "budsjett": 60000000
+    },
+    {
+        "tittel": "Se7en",
+        "regissør": "David Fincher",
+        "spilletid": 127,
+        "budsjett": 33000000
+    },
+    {
+        "tittel": "The Lion King",
+        "regissør": "Roger Allers og Rob Minkoff",
+        "spilletid": 88,
+        "budsjett": 45000000
+    },
+    {
+        "tittel": "Spirited Away",
+        "regissør": "Hayao Miyazaki",
+        "spilletid": 125,
+        "budsjett": 19000000
+    },
+    {
+        "tittel": "WALL-E",
+        "regissør": "Andrew Stanton",
+        "spilletid": 98,
+        "budsjett": 180000000
+    },
+    {
+        "tittel": "Up",
+        "regissør": "Pete Docter",
+        "spilletid": 96,
+        "budsjett": 175000000
+    },
+    {
+        "tittel": "Coco",
+        "regissør": "Lee Unkrich",
+        "spilletid": 105,
+        "budsjett": 175000000
+    },
+    {
+        "tittel": "Amélie",
+        "regissør": "Jean-Pierre Jeunet",
+        "spilletid": 122,
+        "budsjett": 10000000
+    },
+    {
+        "tittel": "Before Sunrise",
+        "regissør": "Richard Linklater",
+        "spilletid": 101,
+        "budsjett": 2500000
+    },
+    {
+        "tittel": "Eternal Sunshine of the Spotless Mind",
+        "regissør": "Michel Gondry",
+        "spilletid": 108,
+        "budsjett": 20000000
+    },
+    {
+        "tittel": "Her",
+        "regissør": "Spike Jonze",
+        "spilletid": 126,
+        "budsjett": 23000000
+    },
+    {
+        "tittel": "Titanic",
+        "regissør": "James Cameron",
+        "spilletid": 194,
+        "budsjett": 200000000
+    },
+    {
+        "tittel": "No Country for Old Men",
+        "regissør": "Joel og Ethan Coen",
+        "spilletid": 122,
+        "budsjett": 25000000
+    },
+    {
+        "tittel": "A Beautiful Mind",
+        "regissør": "Ron Howard",
+        "spilletid": 135,
+        "budsjett": 58000000
+    },
+    {
+        "tittel": "12 Angry Men",
+        "regissør": "Sidney Lumet",
+        "spilletid": 96,
+        "budsjett": 350000
+    },
+    {
+        "tittel": "Braveheart",
+        "regissør": "Mel Gibson",
+        "spilletid": 178,
+        "budsjett": 72000000
+    },
+    {
+        "tittel": "The Departed",
+        "regissør": "Martin Scorsese",
+        "spilletid": 151,
+        "budsjett": 90000000
+    },
+    {
+        "tittel": "Django Unchained",
+        "regissør": "Quentin Tarantino",
+        "spilletid": 165,
+        "budsjett": 100000000
+    },
+    {
+        "tittel": "Inglourious Basterds",
+        "regissør": "Quentin Tarantino",
+        "spilletid": 153,
+        "budsjett": 70000000
+    },
+    {
+        "tittel": "The Prestige",
+        "regissør": "Christopher Nolan",
+        "spilletid": 130,
+        "budsjett": 40000000
+    },
+    {
+        "tittel": "Memento",
+        "regissør": "Christopher Nolan",
+        "spilletid": 113,
+        "budsjett": 9000000
+    },
+    {
+        "tittel": "2001: A Space Odyssey",
+        "regissør": "Stanley Kubrick",
+        "spilletid": 149,
+        "budsjett": 10500000
+    },
+    {
+        "tittel": "Blade Runner 2049",
+        "regissør": "Denis Villeneuve",
+        "spilletid": 164,
+        "budsjett": 150000000
+    },
+    {
+        "tittel": "Arrival",
+        "regissør": "Denis Villeneuve",
+        "spilletid": 116,
+        "budsjett": 47000000
+    },
+    {
+        "tittel": "The Pianist",
+        "regissør": "Roman Polanski",
+        "spilletid": 150,
+        "budsjett": 35000000
+    },
+    {
+        "tittel": "Room",
+        "regissør": "Lenny Abrahamson",
+        "spilletid": 118,
+        "budsjett": 13000000
+    },
+    {
+        "tittel": "Catch Me If You Can",
+        "regissør": "Steven Spielberg",
+        "spilletid": 141,
+        "budsjett": 52000000
+    }
+]
